@@ -16,3 +16,11 @@ df = (spark.read.format("csv")
       .option("header","true")
       .load(csv_file))
 df.createOrReplaceTempView("us_delay_flights_tbl")
+
+spark.sql("""SELECT distance, origin,destination from us_delay_flights_tbl  where  distance > 1000
+           ORDER BY distance DESC""").show(10)
+
+spark.sql("""Select  * from  us_delay_flights_tbl """).show(5)
+
+
+

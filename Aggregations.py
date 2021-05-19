@@ -70,3 +70,4 @@ fire_df = spark.read.csv(sf_fire_file, header=True, schema=fire_schema)
     .show()
 
  )
+fire_df.explain(True)
